@@ -1,0 +1,9 @@
+create database Cefet;
+use Cefet;
+
+CREATE TABLE `Cefet`.`usuario` (`codigo` INT NOT NULL AUTO_INCREMENT , `nome` VARCHAR(50) NOT NULL , `email` VARCHAR(50) NOT NULL , `senha` TEXT NOT NULL , `data_cadastro` VARCHAR(10) NOT NULL , `ultimo_login` VARCHAR(10) NOT NULL , PRIMARY KEY (`codigo`)) ENGINE = InnoDB;
+
+
+CREATE TABLE `Cefet`.`Pedidos` (`ID_pedido` INT NOT NULL AUTO_INCREMENT , `ID_Usuario` INT NOT NULL , `hamburguer` VARCHAR(30) NOT NULL , `adicional` VARCHAR(30) NOT NULL , `quantidade` INT NOT NULL , PRIMARY KEY (`ID_pedido`)) ENGINE = InnoDB;
+
+ALTER TABLE Pedidos ADD CONSTRAINT fk_idUser FOREIGN KEY(ID_Usuario) REFERENCES usuario (codigo);
